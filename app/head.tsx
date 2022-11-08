@@ -1,3 +1,5 @@
+import '../styles/dist.css';
+
 const siteTitle = 'NZ Budget Tracker';
 const siteDescription = 'Budget tracking tool for New Zealand banks';
 

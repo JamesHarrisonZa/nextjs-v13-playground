@@ -1,3 +1,3 @@
 export const NavBar: React.FC = () => {
-  return <div>Im an amazing AppBar 💥</div>;
+  return <div className="flex bg-blue-500">Im an amazing AppBar 💥</div>;
 };
