@@ -1,6 +1,6 @@
 import Head from './head';
 import Providers from './providers';
-import { NavBar } from '../libs/ui';
+import { NavBar } from '@/ui';
 
 interface RootLayoutProps {
   children: React.ReactNode;
