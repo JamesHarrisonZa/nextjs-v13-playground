@@ -4,17 +4,13 @@
   "private": true,
   "scripts": {
     "build": "next build",
-    "dev": "next dev -p 4200 --turbo",
+    "dev": "next dev -p 4200",
     "start": "next start -p 4200",
     "lint": "next lint",
     "storybook": "start-storybook -p 6969",
     "build-storybook": "build-storybook"
   },
   "dependencies": {
-    "@emotion/react": "^11.10.5",
-    "@emotion/styled": "^11.10.5",
-    "@mui/material": "^5.10.13",
-    "@mui/x-date-pickers": "^5.0.7",
     "next": "13.0.2",
     "react": "18.2.0",
     "react-dom": "18.2.0"

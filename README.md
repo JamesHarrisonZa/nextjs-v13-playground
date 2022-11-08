@@ -1,34 +1,46 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 💲 Budget tracker for NZ banks
 
-## Getting Started
+## 🚧 Work in progress
 
-First, run the development server:
+Rewriting [my prevous project](https://github.com/JamesHarrisonZa/NzBudgetTracker-ChakraUI) but with [NextJS 13](https://beta.nextjs.org/docs/upgrade-guide), [Tailwind CSS](https://tailwindcss.com/) & [daisyUI](https://daisyui.com/)
+
+## Why this exists?
+
+I spend too much money 😶. I want to save more. This exists to help get closer to the dream of affording a house deposit in New Zealand. 😑
+
+## ⚡ Getting Started
+
+### 🤝Third party platform API
+
+Im using [Akahu](https://www.akahu.nz/) which provides financial information from New Zealand banks.
+
+To properly use this app you will need an Akahu account. See [here](https://developers.akahu.nz/docs/personal-apps) for more information
+
+- Copy/duplicate the `.env.example` and name it `.env.local`
+- Add Akahu details to `env.local`.
+
+### 🚀 Running the app
 
 ```bash
 npm run dev
-# or
-yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Technology used
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+- [NextJS](https://nextjs.org/) with ReactJS.
+- [react-query](https://react-query-v3.tanstack.com/) for handling API requests with [axios](https://axios-http.com/).
+- [jotai](https://jotai.org/) for state management.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+### For testing
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+- [react-testing-library](https://testing-library.com/) test the way the user would interact with the app.
+- [vitest](https://vitest.dev/) test runner. Faster alternative to jest.
+- [msw](https://mswjs.io/) for mocking APIs for tests.
 
-## Learn More
+## 🔧 TODO and maybe coming soon™
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- Fresh UI with graphs and stuff
+- Update stats to compare last month to this month.
+- Find good placeholder image for credits/debits.
+- Set budget goals for categories.
+- Add pending transactions from Akahu.

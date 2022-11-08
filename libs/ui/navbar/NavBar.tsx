@@ -1,6 +1,3 @@
-import { FC } from 'react';
-import { AppBar } from '@mui/material';
-
-export const NavBar: FC = () => {
-  return <AppBar position="static">Hello world</AppBar>;
+export const NavBar: React.FC = () => {
+  return <div>Im an amazing AppBar 💥</div>;
 };
