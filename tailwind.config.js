@@ -10,7 +10,7 @@ module.exports = {
   plugins: [require('@tailwindcss/typography'), require('daisyui')],
   theme: {
     fontFamily: {
-      hero: ['Permanent Marker', 'cursive'],
+      hero: ['Smooch'],
     },
   },
   daisyui: {

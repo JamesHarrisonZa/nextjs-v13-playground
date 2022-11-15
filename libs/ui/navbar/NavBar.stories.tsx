@@ -11,7 +11,3 @@ export default {
 const Template: ComponentStory<typeof NavBar> = (args) => <NavBar {...args} />;
 
 export const Default = Template.bind({});
-
-export const WithAnImage = () => (
-  <img src="/images/profile.jpg" alt="my image" />
-);
