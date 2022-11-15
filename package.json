@@ -5,6 +5,8 @@
   "scripts": {
     "build": "next build",
     "dev": "next dev -p 4200",
+    "dev:tailwind": "concurrently 'npm run dev' 'npm run tailwind --watch'",
+    "dev:storybook": "concurrently 'npm run storybook' 'npm run tailwind --watch'",
     "start": "next start -p 4200",
     "lint": "next lint",
     "storybook": "start-storybook -p 6969",
@@ -33,6 +35,7 @@
     "@types/react-dom": "18.0.8",
     "autoprefixer": "^10.4.13",
     "babel-loader": "^8.3.0",
+    "concurrently": "^7.5.0",
     "daisyui": "^2.38.1",
     "eslint": "8.27.0",
     "eslint-config-next": "13.0.2",
