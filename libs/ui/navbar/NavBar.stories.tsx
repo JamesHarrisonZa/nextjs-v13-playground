@@ -1,5 +1,5 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react';
 import React from 'react';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { NavBar } from './NavBar';
 
 export default {
@@ -11,3 +11,7 @@ export default {
 const Template: ComponentStory<typeof NavBar> = (args) => <NavBar {...args} />;
 
 export const Default = Template.bind({});
+
+export const WithAnImage = () => (
+  <img src="/images/profile.jpg" alt="my image" />
+);
