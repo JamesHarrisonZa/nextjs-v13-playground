@@ -1,8 +1,9 @@
+import { Hero } from '@/ui';
+
 const HomePage: React.FC = () => {
   return (
     <div>
-      <h1>Home Page</h1>
-      <p>Some content</p>
+      <Hero />
     </div>
   );
 };
