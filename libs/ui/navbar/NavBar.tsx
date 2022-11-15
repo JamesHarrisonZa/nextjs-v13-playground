@@ -2,7 +2,7 @@ import { Avatar } from '../avatar/Avatar';
 
 export const NavBar: React.FC = () => {
   return (
-    <div className="navbar bg-base-100 bg-blue-500">
+    <div className="navbar bg-blue-500">
       <div className="flex-1">
         <a className="btn btn-ghost normal-case text-xl">Home</a>
       </div>
