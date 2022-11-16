@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { themeChange } from 'theme-change';
 import { Avatar } from '../avatar/Avatar';
+import { ThemeSelect } from '../theme-select/ThemeSelect';
 
 export const NavBar: React.FC = () => {
   useEffect(() => {
@@ -13,15 +14,7 @@ export const NavBar: React.FC = () => {
         <a className="btn btn-ghost normal-case text-xl">Home</a>
       </div>
 
-      <select className="select bg-primary max-w-xs" data-choose-theme>
-        <option disabled selected>
-          Theme
-        </option>
-        <option value="dark">dark</option>
-        <option value="light">light</option>
-        <option value="cupcake">cupcake</option>
-        <option value="night">night</option>
-      </select>
+      <ThemeSelect />
 
       <div className="flex-none">
         <div className="dropdown dropdown-end">

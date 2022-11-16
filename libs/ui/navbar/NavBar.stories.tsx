@@ -4,7 +4,7 @@ import { NavBar } from './NavBar';
 
 export default {
   component: NavBar,
-  title: 'ui/Layout',
+  title: 'Navbar/NavBar',
   args: {},
 } as ComponentMeta<typeof NavBar>;
 

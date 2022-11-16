@@ -4,7 +4,7 @@ import { Avatar } from './Avatar';
 
 export default {
   component: Avatar,
-  title: 'ui/Avatar',
+  title: 'Navbar/Avatar',
   args: {},
 } as ComponentMeta<typeof Avatar>;
 
