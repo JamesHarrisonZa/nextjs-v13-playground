@@ -52,8 +52,6 @@ const themeNames = [
   'aqua',
   'pastel',
   'fantasy',
-  'wireframe',
-  'black',
   'luxury',
   'dracula',
   'cmyk',
@@ -64,7 +62,6 @@ const themeNames = [
   'coffee',
   'winter',
 ];
-
 export const ThemeDropdown: React.FC = () => {
   useEffect(() => {
     themeChange(false);
@@ -77,7 +74,7 @@ export const ThemeDropdown: React.FC = () => {
       <div title="Change Theme" className="dropdown">
         <label
           tabIndex={0}
-          className="btn m-1 bg-primary gap-1 normal-case btn-ghost"
+          className="btn m-1 bg-primary gap-1 normal-case btn-ghost text-secondary"
         >
           <ThemeSvg />
           Theme

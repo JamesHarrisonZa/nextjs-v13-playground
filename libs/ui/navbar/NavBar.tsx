@@ -5,7 +5,7 @@ export const NavBar: React.FC = () => {
   return (
     <div className="navbar bg-primary">
       <div className="flex-1">
-        <a className="btn btn-ghost normal-case text-xl">Home</a>
+        <a className="btn btn-ghost normal-case text-xl text-secondary">Home</a>
       </div>
       <ThemeDropdown />
       <div className="flex-none">
