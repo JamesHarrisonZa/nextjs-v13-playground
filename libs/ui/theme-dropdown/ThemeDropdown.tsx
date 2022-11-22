@@ -10,7 +10,6 @@ const getThemeOptions = (themeNames: string[]) => {
         <div
           className="outline-base-content overflow-hidden rounded-lg outline-2 outline-offset-2"
           data-set-theme={themeName}
-          data-act-className="outline"
         >
           <div
             data-theme={themeName}
@@ -62,6 +61,7 @@ const themeNames = [
   'coffee',
   'winter',
 ];
+
 export const ThemeDropdown: React.FC = () => {
   useEffect(() => {
     themeChange(false);
@@ -71,7 +71,7 @@ export const ThemeDropdown: React.FC = () => {
 
   return (
     <>
-      <div title="Change Theme" className="dropdown">
+      <div title="Change Theme" className="dropdown dropdown-end">
         <label
           tabIndex={0}
           className="btn m-1 bg-primary gap-1 normal-case btn-ghost text-secondary"
@@ -84,7 +84,7 @@ export const ThemeDropdown: React.FC = () => {
           tabIndex={0}
           className="dropdown-content bg-base-200 text-base-content rounded-t-box rounded-b-box top-px max-h-96 h-[70vh] w-52 overflow-y-auto shadow-2xl mt-16"
         >
-          <div className="grid grid-cols-1 gap-3 p-3">{themeOptions}</div>
+          <div className="grid grid-cols-1 gap-3 p-2">{themeOptions}</div>
         </ul>
       </div>
     </>
