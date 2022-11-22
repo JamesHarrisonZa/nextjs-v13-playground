@@ -1,21 +1,13 @@
-import { useEffect } from 'react';
-import { themeChange } from 'theme-change';
 import { Avatar } from '../avatar/Avatar';
-import { ThemeSelect } from '../theme-select/ThemeSelect';
+import { ThemeDropdown } from '../theme-dropdown/ThemeDropdown';
 
 export const NavBar: React.FC = () => {
-  useEffect(() => {
-    themeChange(false);
-  }, []);
-
   return (
     <div className="navbar bg-primary">
       <div className="flex-1">
         <a className="btn btn-ghost normal-case text-xl">Home</a>
       </div>
-
-      <ThemeSelect />
-
+      <ThemeDropdown />
       <div className="flex-none">
         <div className="dropdown dropdown-end">
           <Avatar />

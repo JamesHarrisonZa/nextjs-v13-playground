@@ -30,7 +30,6 @@ module.exports = {
       'garden',
       'forest',
       'aqua',
-      'lofi',
       'pastel',
       'fantasy',
       'wireframe',

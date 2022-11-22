@@ -3,6 +3,7 @@
     "baseUrl": ".",
     "paths": {
       "@/ui": ["libs/ui/index.ts"],
+      "@/ui/svg": ["libs/ui/svgs/index.ts"],
       "@/styles/*": ["styles/*"]
     },
     "target": "es5",
