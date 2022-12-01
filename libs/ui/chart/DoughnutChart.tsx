@@ -4,27 +4,40 @@ import {
   ArcElement,
   Tooltip,
   Legend,
-  ChartData,
+  ChartData as ChartJsData,
   Plugin,
 } from 'chart.js';
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
+interface DataPoint {
+  label: string;
+  data: number;
+  colour: string;
+}
+
+export interface ChartData {
+  dataPoints: DataPoint[];
+}
+
 // https://www.chartjs.org/docs/latest/charts/doughnut.html
-const data: ChartData<'doughnut', number[], string> = {
-  labels: ['Red', 'Blue', 'Yellow'],
-  datasets: [
-    {
-      label: 'My First Dataset',
-      data: [300, 50, 100],
-      backgroundColor: [
-        'rgb(255, 99, 132)',
-        'rgb(54, 162, 235)',
-        'rgb(255, 205, 86)',
-      ],
-      hoverOffset: 4,
-    },
-  ],
+const getMappedChartJsData = (
+  chartData: ChartData
+): ChartJsData<'doughnut', number[], string> => {
+  const labels = chartData.dataPoints.map((d) => d.label);
+  const data = chartData.dataPoints.map((d) => d.data);
+  const colours = chartData.dataPoints.map((d) => d.colour);
+
+  return {
+    labels: labels,
+    datasets: [
+      {
+        data: data,
+        backgroundColor: colours,
+        hoverOffset: 4,
+      },
+    ],
+  };
 };
 
 // https://www.youtube.com/watch?v=_7w52T9aemo
@@ -68,19 +81,22 @@ export interface DoughnutChartProps {
   topText: string;
   midText: string;
   bottomText: string;
+  chartData: ChartData;
 }
 
 export const DoughnutChart: React.FC<DoughnutChartProps> = ({
   topText,
   midText,
   bottomText,
+  chartData,
 }) => {
   const stackedText = getStackedText(topText, midText, bottomText);
+  const chartJsData = getMappedChartJsData(chartData);
 
   return (
     <Doughnut
       height="250"
-      data={data}
+      data={chartJsData}
       options={{ maintainAspectRatio: false, cutout: '80%' }}
       plugins={[stackedText]}
     />
