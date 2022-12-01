@@ -37,23 +37,35 @@ const stackedText: Plugin<'doughnut', {}> = {
     } = chart;
     ctx.save();
 
-    const fontHeight = 40;
+    const midFontHeight = 40;
+    const subFontHeight = 15;
 
-    ctx.font = `bolder ${fontHeight}px Arial`;
-    ctx.fillStyle = 'rgba(255, 26, 104, 1)';
-    ctx.textAlign = 'center';
-    ctx.fillText('$4,200', width / 2, height / 2 + top);
-    ctx.restore();
-
-    ctx.font = `bolder ${fontHeight / 2}px Arial`;
+    const topText = 'Budget spent';
+    ctx.font = `bolder ${subFontHeight}px Arial`;
     ctx.fillStyle = 'black';
     ctx.textAlign = 'center';
-    ctx.fillText('of $ 5,400', width / 2, height / 2 + top + fontHeight);
+    ctx.fillText(topText, width / 2, height / 2 + top - midFontHeight);
+    ctx.restore();
+
+    const midText = '$4,200';
+    ctx.font = `bolder ${midFontHeight}px Arial`;
+    ctx.fillStyle = 'rgba(255, 26, 104, 1)';
+    ctx.textAlign = 'center';
+    ctx.fillText(midText, width / 2, height / 2 + top);
+    ctx.restore();
+
+    const bottomText = 'of $ 5,400';
+    ctx.font = `bolder ${subFontHeight}px Arial`;
+    ctx.fillStyle = 'black';
+    ctx.textAlign = 'center';
+    ctx.fillText(bottomText, width / 2, height / 2 + top + midFontHeight);
     ctx.restore();
   },
 };
 
-export const Chart: React.FC = () => {
+export interface DoughnutChartProps {}
+
+export const DoughnutChart: React.FC<DoughnutChartProps> = () => {
   return (
     <>
       <Doughnut
