@@ -5,7 +5,11 @@ import { DoughnutChart } from './DoughnutChart';
 export default {
   component: DoughnutChart,
   title: 'Charts/DoughnutChart',
-  args: {},
+  args: {
+    topText: 'Budget spent',
+    midText: '$4,200',
+    bottomText: 'of $ 5,400',
+  },
 } as ComponentMeta<typeof DoughnutChart>;
 
 const Template: ComponentStory<typeof DoughnutChart> = (args) => (

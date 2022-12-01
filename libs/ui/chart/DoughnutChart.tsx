@@ -28,7 +28,11 @@ const data: ChartData<'doughnut', number[], string> = {
 };
 
 // https://www.youtube.com/watch?v=_7w52T9aemo
-const stackedText: Plugin<'doughnut', {}> = {
+const getStackedText = (
+  topText: string,
+  midText: string,
+  bottomText: string
+): Plugin<'doughnut', {}> => ({
   id: 'stackedText',
   afterDatasetsDraw(chart, args, options) {
     const {
@@ -40,40 +44,45 @@ const stackedText: Plugin<'doughnut', {}> = {
     const midFontHeight = 40;
     const subFontHeight = 15;
 
-    const topText = 'Budget spent';
     ctx.font = `bolder ${subFontHeight}px Arial`;
     ctx.fillStyle = 'black';
     ctx.textAlign = 'center';
     ctx.fillText(topText, width / 2, height / 2 + top - midFontHeight);
     ctx.restore();
 
-    const midText = '$4,200';
     ctx.font = `bolder ${midFontHeight}px Arial`;
     ctx.fillStyle = 'rgba(255, 26, 104, 1)';
     ctx.textAlign = 'center';
     ctx.fillText(midText, width / 2, height / 2 + top);
     ctx.restore();
 
-    const bottomText = 'of $ 5,400';
     ctx.font = `bolder ${subFontHeight}px Arial`;
     ctx.fillStyle = 'black';
     ctx.textAlign = 'center';
     ctx.fillText(bottomText, width / 2, height / 2 + top + midFontHeight);
     ctx.restore();
   },
-};
+});
 
-export interface DoughnutChartProps {}
+export interface DoughnutChartProps {
+  topText: string;
+  midText: string;
+  bottomText: string;
+}
 
-export const DoughnutChart: React.FC<DoughnutChartProps> = () => {
+export const DoughnutChart: React.FC<DoughnutChartProps> = ({
+  topText,
+  midText,
+  bottomText,
+}) => {
+  const stackedText = getStackedText(topText, midText, bottomText);
+
   return (
-    <>
-      <Doughnut
-        height="250"
-        data={data}
-        options={{ maintainAspectRatio: false, cutout: '80%' }}
-        plugins={[stackedText]}
-      />
-    </>
+    <Doughnut
+      height="250"
+      data={data}
+      options={{ maintainAspectRatio: false, cutout: '80%' }}
+      plugins={[stackedText]}
+    />
   );
 };
