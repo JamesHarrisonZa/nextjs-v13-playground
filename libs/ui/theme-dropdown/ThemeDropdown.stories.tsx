@@ -9,7 +9,9 @@ export default {
 } as ComponentMeta<typeof ThemeDropdown>;
 
 const Template: ComponentStory<typeof ThemeDropdown> = (args) => (
-  <ThemeDropdown {...args} />
+  <div className="flex justify-center">
+    <ThemeDropdown {...args} />
+  </div>
 );
 
 export const Default = Template.bind({});
