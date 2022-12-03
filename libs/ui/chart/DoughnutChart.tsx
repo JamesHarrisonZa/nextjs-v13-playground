@@ -67,6 +67,15 @@ const getStackedText = (
     ctx.restore();
 
     ctx.font = `bolder ${midFontHeight}px Arial`;
+
+    // Outline
+    ctx.strokeStyle = 'black';
+    ctx.miterLimit = 2;
+    ctx.lineJoin = 'round';
+    ctx.lineWidth = 7;
+    ctx.strokeText(midText, width / 2, height / 2 + top);
+    ctx.lineWidth = 1;
+
     ctx.fillStyle = midFontColour;
     ctx.textAlign = 'center';
     ctx.fillText(midText, width / 2, height / 2 + top);
