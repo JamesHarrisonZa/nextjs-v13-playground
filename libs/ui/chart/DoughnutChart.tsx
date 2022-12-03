@@ -109,7 +109,11 @@ export const DoughnutChart: React.FC<DoughnutChartProps> = ({
     <Doughnut
       height="250"
       data={chartJsData}
-      options={{ maintainAspectRatio: false, cutout: '80%' }}
+      options={{
+        maintainAspectRatio: false,
+        cutout: '80%',
+        plugins: { legend: { align: 'center', position: 'right' } },
+      }}
       plugins={[stackedText]}
     />
   );
