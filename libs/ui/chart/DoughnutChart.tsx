@@ -57,30 +57,24 @@ const getStackedText = (
     const midFontHeight = 40;
     const subFontHeight = 15;
 
-    const midFontColour = 'white';
+    const midFontColour = 'grey';
     const subFontColour = 'black';
 
+    // Top text
     ctx.font = `bolder ${subFontHeight}px Arial`;
     ctx.fillStyle = subFontColour;
     ctx.textAlign = 'center';
     ctx.fillText(topText, width / 2, height / 2 + top - midFontHeight);
     ctx.restore();
 
+    // Mid text
     ctx.font = `bolder ${midFontHeight}px Arial`;
-
-    // Outline
-    ctx.strokeStyle = 'black';
-    ctx.miterLimit = 2;
-    ctx.lineJoin = 'round';
-    ctx.lineWidth = 7;
-    ctx.strokeText(midText, width / 2, height / 2 + top);
-    ctx.lineWidth = 1;
-
     ctx.fillStyle = midFontColour;
     ctx.textAlign = 'center';
-    ctx.fillText(midText, width / 2, height / 2 + top);
+    ctx.fillText(midText, width / 2, height / 2 + top + subFontHeight);
     ctx.restore();
 
+    // Bottom text
     ctx.font = `bolder ${subFontHeight}px Arial`;
     ctx.fillStyle = subFontColour;
     ctx.textAlign = 'center';
