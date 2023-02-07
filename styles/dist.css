@@ -2251,14 +2251,16 @@ html{
   line-height: 1.25rem;
 }
 
-.menu .menu-title > *{
-  padding-top: 0.25rem;
-  padding-bottom: 0.25rem;
+.menu .menu-title{
   font-size: 0.75rem;
   line-height: 1rem;
   font-weight: 700;
-  color: hsl(var(--bc) / var(--tw-text-opacity));
-  --tw-text-opacity: 0.4;
+  opacity: 0.4;
+}
+
+.menu .menu-title > *{
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
 }
 
 .menu :where(li:not(.disabled)) > :where(*:not(ul)){
@@ -2551,10 +2553,6 @@ html{
 
 .hidden{
   display: none;
-}
-
-.h-64{
-  height: 16rem;
 }
 
 .h-3{
