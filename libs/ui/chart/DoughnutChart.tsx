@@ -40,6 +40,17 @@ const getMappedChartJsData = (
   };
 };
 
+const getTextColourMatchingClass = (
+  className: string,
+  fallbackColour: string
+) => {
+  const htmlMatchingPrimaryText = document.querySelector(className);
+
+  return htmlMatchingPrimaryText
+    ? window.getComputedStyle(htmlMatchingPrimaryText).color
+    : fallbackColour;
+};
+
 // https://www.youtube.com/watch?v=_7w52T9aemo
 const getStackedText = (
   topText: string,
@@ -57,26 +68,32 @@ const getStackedText = (
     const midFontHeight = 40;
     const subFontHeight = 15;
 
-    const midFontColour = 'grey';
-    const subFontColour = 'black';
+    const primaryTextColour = getTextColourMatchingClass(
+      '.text-primary',
+      'grey'
+    );
+    const secondaryTextColour = getTextColourMatchingClass(
+      '.text-secondary',
+      'black'
+    );
 
     // Top text
     ctx.font = `bolder ${subFontHeight}px Arial`;
-    ctx.fillStyle = subFontColour;
+    ctx.fillStyle = secondaryTextColour;
     ctx.textAlign = 'center';
     ctx.fillText(topText, width / 2, height / 2 + top - midFontHeight);
     ctx.restore();
 
     // Mid text
     ctx.font = `bolder ${midFontHeight}px Arial`;
-    ctx.fillStyle = midFontColour;
+    ctx.fillStyle = primaryTextColour;
     ctx.textAlign = 'center';
     ctx.fillText(midText, width / 2, height / 2 + top + subFontHeight);
     ctx.restore();
 
     // Bottom text
     ctx.font = `bolder ${subFontHeight}px Arial`;
-    ctx.fillStyle = subFontColour;
+    ctx.fillStyle = secondaryTextColour;
     ctx.textAlign = 'center';
     ctx.fillText(bottomText, width / 2, height / 2 + top + midFontHeight);
     ctx.restore();
@@ -100,15 +117,19 @@ export const DoughnutChart: React.FC<DoughnutChartProps> = ({
   const chartJsData = getMappedChartJsData(chartData);
 
   return (
-    <Doughnut
-      height="250"
-      data={chartJsData}
-      options={{
-        maintainAspectRatio: false,
-        cutout: '80%',
-        plugins: { legend: { align: 'center', position: 'right' } },
-      }}
-      plugins={[stackedText]}
-    />
+    <div className="max-h-64">
+      <p className="text-primary" /> {/* Here to grab the primary colour */}
+      <p className="text-secondary" /> {/* Here to grab the secondary colour */}
+      <Doughnut
+        height="250"
+        data={chartJsData}
+        options={{
+          maintainAspectRatio: false,
+          cutout: '80%',
+          plugins: { legend: { align: 'center', position: 'right' } },
+        }}
+        plugins={[stackedText]}
+      />
+    </div>
   );
 };
