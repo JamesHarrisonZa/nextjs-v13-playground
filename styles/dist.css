@@ -2539,6 +2539,10 @@ html{
   margin-top: 0.75rem;
 }
 
+.block{
+  display: block;
+}
+
 .inline-block{
   display: inline-block;
 }
@@ -2565,6 +2569,10 @@ html{
 
 .h-\[70vh\]{
   height: 70vh;
+}
+
+.h-screen{
+  height: 100vh;
 }
 
 .max-h-64{
@@ -2637,6 +2645,10 @@ html{
 
 .grid-rows-3{
   grid-template-rows: repeat(3, minmax(0, 1fr));
+}
+
+.flex-col{
+  flex-direction: column;
 }
 
 .flex-wrap{

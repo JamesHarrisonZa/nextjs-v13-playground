@@ -12,8 +12,10 @@ const RootLayout: React.FC<RootLayoutProps> = ({ children }) => {
       <Head />
       <body>
         <Providers>
-          <NavBar />
-          {children}
+          <div className="flex flex-col h-screen">
+            <NavBar />
+            <div className="flex-grow">{children}</div>
+          </div>
         </Providers>
       </body>
     </html>
