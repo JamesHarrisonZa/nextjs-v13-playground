@@ -2539,10 +2539,6 @@ html{
   margin-top: 0.75rem;
 }
 
-.block{
-  display: block;
-}
-
 .inline-block{
   display: inline-block;
 }
@@ -2583,8 +2579,8 @@ html{
   max-height: 24rem;
 }
 
-.min-h-screen{
-  min-height: 100vh;
+.min-h-full{
+  min-height: 100%;
 }
 
 .w-2{
