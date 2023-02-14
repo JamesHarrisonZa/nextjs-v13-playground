@@ -28,19 +28,17 @@ npm run dev
 ## Technology used
 
 - [NextJS](https://nextjs.org/) with ReactJS.
-- [react-query](https://react-query-v3.tanstack.com/) for handling API requests with [axios](https://axios-http.com/).
-- [jotai](https://jotai.org/) for state management.
+- [TailwindCSS](https://tailwindcss.com/) now that Next13 doesn't support @ emotion styling. 
+- [DaisyUI](https://daisyui.com/) for collection of Tailwind components
+<!-- - [react-query](https://react-query-v3.tanstack.com/) for handling API requests with [axios](https://axios-http.com/). -->
+<!-- - [jotai](https://jotai.org/) for state management. -->
 
-### For testing
+<!-- ### For testing
 
 - [react-testing-library](https://testing-library.com/) test the way the user would interact with the app.
 - [vitest](https://vitest.dev/) test runner. Faster alternative to jest.
-- [msw](https://mswjs.io/) for mocking APIs for tests.
+- [msw](https://mswjs.io/) for mocking APIs for tests. -->
 
 ## 🔧 TODO and maybe coming soon™
 
-- Fresh UI with graphs and stuff
-- Update stats to compare last month to this month.
-- Find good placeholder image for credits/debits.
-- Set budget goals for categories.
-- Add pending transactions from Akahu.
+- Solve problem with SSR and user selected themes
