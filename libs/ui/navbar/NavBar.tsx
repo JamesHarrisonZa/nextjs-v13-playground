@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { Avatar } from '../avatar/Avatar';
 import { ThemeDropdown } from '../theme-dropdown/ThemeDropdown';
 
@@ -5,7 +6,12 @@ export const NavBar: React.FC = () => {
   return (
     <div className="navbar bg-primary">
       <div className="flex-1">
-        <a className="btn btn-ghost normal-case text-xl text-secondary">Home</a>
+        <Link
+          href="./"
+          className="btn btn-ghost normal-case text-xl text-secondary"
+        >
+          Home
+        </Link>
       </div>
       <ThemeDropdown />
       <div className="flex-none">
