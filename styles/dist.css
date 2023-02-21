@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Smooch&effect=3d');
 
 /*
-! tailwindcss v3.2.6 | MIT License | https://tailwindcss.com
+! tailwindcss v3.2.7 | MIT License | https://tailwindcss.com
 */
 
 /*
@@ -2589,10 +2589,6 @@ html{
 
 .min-h-full{
   min-height: 100%;
-}
-
-.min-h-screen{
-  min-height: 100vh;
 }
 
 .w-2{
